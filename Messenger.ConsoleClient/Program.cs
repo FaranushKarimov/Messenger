@@ -1,14 +1,15 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
+using Messenger.Application.DTOs;  // подключаем DTO
 
 var connection = new HubConnectionBuilder()
-    .WithUrl("http://localhost:5000/chatHub")  
+    .WithUrl("http://localhost:5000/chatHub")
     .Build();
 
+// получение входящих сообщений
 connection.On<string, string>("ReceiveMessage", (fromUserId, message) =>
 {
     Console.WriteLine($"Получено сообщение от {fromUserId}: {message}");
 });
-
 
 await connection.StartAsync();
 Console.WriteLine("Клиент подключен к серверу SignalR");
@@ -25,9 +26,15 @@ while (true)
         Console.Write("ToUserId: ");
         var to = Console.ReadLine();
         Console.Write("Сообщение: ");
-        var message = Console.ReadLine();
+        var messageText = Console.ReadLine();
 
-        await connection.InvokeAsync("SendMessage", from, to, message);
+        var request = new SendMessageRequestDto(
+            from!,
+            to!,
+            messageText!
+        );
+
+        await connection.InvokeAsync("SendMessage", request);
     }
     else if (command == "edit")
     {
