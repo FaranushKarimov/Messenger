@@ -11,4 +11,8 @@
       <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.7" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Messenger.Application\Messenger.Application.csproj" />
+    </ItemGroup>
+
 </Project>
