@@ -1,0 +1,64 @@
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bin/
+obj/
+out/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Rider-specific
+.idea/
+*.sln.iml
+
+## ASP.NET / .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Logs
+*.log
+logs/
+*.nlog
+
+## Packages
+packages/
+*.nupkg
+*.snupkg
+.nuget/
+
+## Visual Studio Code
+.vscode/
+
+## Publish directory
+publish/
+
+## Database files
+*.mdf
+*.ldf
+
+## Configuration files
+appsettings.Development.json
+appsettings.Local.json
+
+## Others
+*.db
+*.bak
+*.tmp
+
+## Backup files
+*.orig
+*.bak
+
+## OS generated files
+.DS_Store
+Thumbs.db
+
+## Cron job logs (если сохраняешь)
+*.cron.log
